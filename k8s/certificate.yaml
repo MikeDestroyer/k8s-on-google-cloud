@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+metadata:
+  name: obscuredbyfuzz-com-tls
+spec:
+  secretName: obscuredbyfuzz-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: obscuredbyfuzz.com
+  dnsNames:
+    - obscuredbyfuzz.com
+    - www.obscuredbyfuzz.com
