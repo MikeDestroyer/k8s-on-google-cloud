@@ -19,5 +19,12 @@ pipeline {
 
             }
         }
+        stage('Build client container')
+            agent {
+                dockerfile {
+                    filename 'Dockerfile.test'
+                    dir 'client'
+                }
+            }
     }
 }
